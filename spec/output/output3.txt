@@ -1,0 +1,6 @@
+/tmp/cpp-test/test.cpp:3:13: warning: unused function 'test' [clang-diagnostic-unused-function]
+static void test() {}
+            ^
+/tmp/cpp-test/test.cpp:4:13: warning: unused function 'test2' [clang-diagnostic-unused-function]
+static void test2() {}
+            ^

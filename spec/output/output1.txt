@@ -1,0 +1,3 @@
+/tmp/cpp-test/test.cpp:3:13: warning: unused function 'test' [clang-diagnostic-unused-function]
+static void test() {}
+            ^

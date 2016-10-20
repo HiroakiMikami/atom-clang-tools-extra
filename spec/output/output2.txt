@@ -1,0 +1,6 @@
+/tmp/test.cpp:6:5: error: unknown type name 'Foo' [clang-diagnostic-error]
+    Foo foo(10);
+    ^
+/tmp/test.cpp:8:12: error: cannot initialize return object of type 'int' with an lvalue of type 'const char [1]' [clang-diagnostic-error]
+    return "";
+           ^
