@@ -5,9 +5,7 @@
   "description": "A short description of your package",
   "keywords": [
   ],
-  "activationCommands": {
-    "atom-workspace": "clang-tools-extra:toggle"
-  },
+  "activationCommands": {},
   "repository": "https://github.com/atom/clang-tools-extra",
   "license": "MIT",
   "engines": {
@@ -16,5 +14,12 @@
   "dependencies": {
     "bluebird": ">=3.3.1 < 4.0.0",
     "atom-linter": ">=8.0.0 < 9.0.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }
