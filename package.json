@@ -2,8 +2,9 @@
   "name": "clang-tools-extra",
   "main": "./lib/clang-tools-extra",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Atom.io integration of clang-tools-extra",
   "keywords": [
+    "clang", "clang-tools-extra"
   ],
   "activationCommands": {},
   "repository": "https://github.com/atom/clang-tools-extra",
