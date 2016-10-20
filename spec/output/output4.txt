@@ -1,0 +1,12 @@
+/tmp/cpp-test/test.cpp:7:9: error: no matching constructor for initialization of 'Foo' [clang-diagnostic-error]
+    Foo foo("");
+        ^
+/tmp/cpp-test/foo.hpp:1:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [1]' to 'const Foo' for 1st argument
+struct Foo {
+       ^
+/tmp/cpp-test/foo.hpp:2:5: note: candidate constructor not viable: no known conversion from 'const char [1]' to 'const int' for 1st argument
+    Foo(const int &x);
+    ^
+/tmp/cpp-test/test.cpp:9:12: error: cannot initialize return object of type 'int' with an lvalue of type 'const char [1]' [clang-diagnostic-error]
+    return "";
+           ^
