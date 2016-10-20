@@ -26,8 +26,8 @@ describe('ClangTidyLinter', () => {
       const message = result[0]
       expect(message.range.start.row).toBe(0)
       expect(message.range.start.column).toBe(0)
-      expect(message.range.end.row).toBe(3)
-      expect(message.range.end.column).toBe(13)
+      expect(message.range.end.row).toBe(2)
+      expect(message.range.end.column).toBe(12)
       expect(message.severity).toBe('warning')
       expect(message.text).toBe("unused function 'test' [clang-diagnostic-unused-function]")
       expect(message.trace.length).toBe(0)
