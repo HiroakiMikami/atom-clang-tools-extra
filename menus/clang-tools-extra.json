@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "clang-tools-extra: apply all fixes",
+        "command": "clang-tools-extra:apply-all-fixes"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "clang-tools-extra",
+          "submenu": [
+            {
+              "label": "Apply all fixes",
+              "command": "clang-tools-extra:apply-all-fixes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
