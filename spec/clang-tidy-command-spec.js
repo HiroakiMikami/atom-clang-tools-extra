@@ -1,14 +1,14 @@
 'use babel'
 
-import ClangTidy from '../lib/clang-tidy'
+import ClangTidyCommand from '../lib/clang-tidy-command'
 
-describe('ClangTidy', () => {
+describe('ClangTidyCommand ', () => {
   it('invokes the command', () => {
-    const clangTidy = new ClangTidy('./spec/bin/clang-tidy')
+    const clangTidyCommand = new ClangTidyCommand('./spec/bin/clang-tidy')
 
     let result = null
     waitsForPromise(() => {
-      return clangTidy.check([], 'foo.cpp').then(output => {
+      return clangTidyCommand.check([], 'foo.cpp').then(output => {
         result = output
         return output
       })
@@ -24,10 +24,10 @@ describe('ClangTidy', () => {
     })
   })
   it('append corresponding patches into errors.', () => {
-    const clangTidy = new ClangTidy('./spec/bin/clang-tidy-with-fixes')
+    const clangTidyCommand = new ClangTidyCommand('./spec/bin/clang-tidy-with-fixes')
     let result = null
     waitsForPromise(() => {
-      return clangTidy.check([], 'foo.cpp').then(output => {
+      return clangTidyCommand.check([], 'foo.cpp').then(output => {
         result = output
         return output
       })
@@ -52,11 +52,11 @@ describe('ClangTidy', () => {
     })
   })
   it('fixes errors in the source code', () => {
-    const clangTidy = new ClangTidy('./spec/bin/clang-tidy-apply-all-fixes')
+    const clangTidyCommand = new ClangTidyCommand('./spec/bin/clang-tidy-apply-all-fixes')
 
     let result = null
     waitsForPromise(() => {
-      return clangTidy.applyAllFixes(['-xcpp'], 'foo.cpp').then(output => {
+      return clangTidyCommand.applyAllFixes(['-xcpp'], 'foo.cpp').then(output => {
         result = output
         return output
       })
