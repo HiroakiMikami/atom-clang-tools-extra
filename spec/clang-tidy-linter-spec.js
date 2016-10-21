@@ -34,4 +34,28 @@ describe('ClangTidyLinter', () => {
       expect(message.trace.length).toBe(0)
     })
   })
+  it('get list of fix from point.', () => {
+    const clangTidy = new ClangTidy('./spec/bin/clang-tidy-with-fixes')
+    const linter = new ClangTidyLinter(clangTidy, new ClangArguments({
+      getClangCppFlags: () => []
+    }))
+
+    let editor = null
+    let result = null
+    waitsForPromise(() => {
+      return atom.workspace.open('foo.cpp').then(e => {
+        editor = e
+        editor.setText('int main() {\n    Foo foo(10)\n    int x = 0\n}')
+        return linter.lint(editor)
+      }).then(output => {
+        result = output
+        return output
+      })
+    })
+    runs(() => {
+      expect(linter.getFixes(editor.getPath(), [1, 4]).fixes.length).toBe(0)
+      expect(linter.getFixes(editor.getPath(), [1, 16]).fixes.length).toBe(1)
+      expect(linter.getFixes(editor.getPath(), [10, 0])).toBe(undefined)
+    })
+  })
 })
