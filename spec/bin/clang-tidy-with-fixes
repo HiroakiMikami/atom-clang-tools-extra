@@ -1,0 +1,15 @@
+#! /bin/sh
+
+while true
+do
+  opt=$1
+  shift 1
+  case $opt in
+    -export-fixes )
+      break
+      ;;
+    esac
+done
+
+cat $(dirname $0)/../output/output5.txt
+cat $(dirname $0)/../output/exported-fixes5.txt > $1

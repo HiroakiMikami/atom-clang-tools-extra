@@ -1,0 +1,11 @@
+/tmp/test.cpp:2:5: error: unknown type name 'Foo' [clang-diagnostic-error]
+    Foo foo(10)
+    ^
+/tmp/test.cpp:2:16: error: expected ';' at end of declaration [clang-diagnostic-error]
+    Foo foo(10)
+               ^
+               ;
+/tmp/test.cpp:3:14: error: expected ';' at end of declaration [clang-diagnostic-error]
+    int x = 0
+             ^
+             ;

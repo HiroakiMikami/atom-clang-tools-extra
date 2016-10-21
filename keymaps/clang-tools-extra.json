@@ -1,0 +1,5 @@
+{
+  "atom-text-editor": {
+    "ctrl-1": "clang-tools-extra:apply-all-fixes"
+  }
+}
