@@ -1,0 +1,12 @@
+---
+MainSourceFile:  ''
+Replacements:
+  - FilePath:        /tmp/test.cpp
+    Offset:          29
+    Length:          0
+    ReplacementText: ';'
+  - FilePath:        /tmp/test.cpp
+    Offset:          43
+    Length:          0
+    ReplacementText: ';'
+...
