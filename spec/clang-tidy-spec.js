@@ -23,6 +23,34 @@ describe('ClangTidy', () => {
       expect(result[0].trace.length).toBe(0)
     })
   })
+  it('append corresponding patches into errors.', () => {
+    const clangTidy = new ClangTidy('./spec/bin/clang-tidy-with-fixes')
+    let result = null
+    waitsForPromise(() => {
+      return clangTidy.check([], 'foo.cpp').then(output => {
+        result = output
+        return output
+      })
+    })
+    runs(() => {
+      expect(result).not.toBe(null)
+      expect(result.length).toBe(3)
+
+      const [error1, error2, error3] = result
+
+      expect(error1.fixes.length).toBe(0)
+
+      expect(error2.fixes.length).toBe(1)
+      expect(error2.fixes[0].offset).toBe(29)
+      expect(error2.fixes[0].length).toBe(0)
+      expect(error2.fixes[0].text).toBe(';')
+
+      expect(error3.fixes.length).toBe(1)
+      expect(error3.fixes[0].offset).toBe(43)
+      expect(error3.fixes[0].length).toBe(0)
+      expect(error3.fixes[0].text).toBe(';')
+    })
+  })
   it('fixes errors in the source code', () => {
     const clangTidy = new ClangTidy('./spec/bin/clang-tidy-apply-all-fixes')
 
