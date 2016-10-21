@@ -21,11 +21,10 @@ describe('ClangTidy', () => {
       })
     })
     runs(() => {
-      const {linterMessages, fixes} = result
-      expect(linterMessages).not.toBe(null)
-      expect(linterMessages.length).toBe(1)
+      expect(result).not.toBe(null)
+      expect(result.length).toBe(1)
 
-      const message = linterMessages[0]
+      const message = result[0]
       expect(message.range.start.row).toBe(0)
       expect(message.range.start.column).toBe(0)
       expect(message.range.end.row).toBe(2)
@@ -34,10 +33,10 @@ describe('ClangTidy', () => {
       expect(message.text).toBe("unused function 'test' [clang-diagnostic-unused-function]")
       expect(message.trace.length).toBe(0)
 
-      expect(fixes.length).toBe(0)
+      expect(message.fixes.length).toBe(0)
     })
   })
-  it('get list of fix from buffer-point.', () => {
+  it('get list of message from buffer-point.', () => {
     const clangTidyCommand = new ClangTidyCommand('./spec/bin/clang-tidy-with-fixes')
     const clangTidy = new ClangTidy(clangTidyCommand, new ClangArguments({
       getClangCppFlags: () => []
@@ -52,9 +51,10 @@ describe('ClangTidy', () => {
       }).then(output => output)
     })
     runs(() => {
-      expect(clangTidy.getFixes(editor.getPath(), [1, 4]).length).toBe(0)
-      expect(clangTidy.getFixes(editor.getPath(), [1, 16]).length).toBe(1)
-      expect(clangTidy.getFixes(editor.getPath(), [10, 0]).length).toBe(0)
+      expect(clangTidy.getMessages(editor.getPath(), [0, 0]).length).toBe(0)
+      expect(clangTidy.getMessages(editor.getPath(), [1, 4]).length).toBe(1)
+      expect(clangTidy.getMessages(editor.getPath(), [1, 16]).length).toBe(1)
+      expect(clangTidy.getMessages(editor.getPath(), [10, 0]).length).toBe(0)
     })
   })
 })
