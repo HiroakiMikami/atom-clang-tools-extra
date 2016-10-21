@@ -2,13 +2,14 @@
 
 import ClangTidy from '../lib/clang-tidy'
 import ClangTidyLinter from '../lib/clang-tidy-linter'
+import ClangArguments from '../lib/clang-arguments'
 
 describe('ClangTidyLinter', () => {
   it('generate linter messages', () => {
     const clangTidy = new ClangTidy('./spec/bin/clang-tidy')
-    const linter = new ClangTidyLinter(clangTidy, {
+    const linter = new ClangTidyLinter(clangTidy, new ClangArguments({
       getClangCppFlags: () => []
-    })
+    }))
 
     let result = null
     waitsForPromise(() => {
