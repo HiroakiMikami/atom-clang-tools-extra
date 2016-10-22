@@ -7,7 +7,7 @@
     "clang", "clang-tools-extra", "c++", "c", "objective-c++", "objective-c"
   ],
   "activationCommands": {},
-  "repository": "https://github.com/atom/clang-tools-extra",
+  "repository": "https://github.com/HiroakiMikami/atom-clang-tools-extra",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
