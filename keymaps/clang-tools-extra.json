@@ -1,5 +1,7 @@
 {
   "atom-text-editor": {
-    "ctrl-1": "clang-tools-extra:apply-all-fixes"
+    "ctrl-1": "clang-tools-extra:apply-all-fixes",
+    "ctrl-2": "clang-tools-extra:rename",
+    "ctrl-3": "clang-tools-extra:confirm-rename"
   }
 }

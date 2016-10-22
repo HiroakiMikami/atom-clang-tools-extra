@@ -17,6 +17,14 @@
             {
               "label": "Apply all fixes",
               "command": "clang-tools-extra:apply-all-fixes"
+            },
+            {
+              "label": "Rename",
+              "command": "clang-tools-extra:rename"
+            },
+            {
+              "label": "Confrim rename",
+              "command": "clang-tools-extra:confirm-rename"
             }
           ]
         }
