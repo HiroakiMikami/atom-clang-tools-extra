@@ -14,7 +14,7 @@ describe('ClangRenameCommand ', () => {
       })
     })
     runs(() => {
-      expect(result).toBe(`-offset 0 -new-name bar foo.cpp`)
+      expect(result).toBe('-offset 0 -new-name bar foo.cpp')
     })
   })
 })
