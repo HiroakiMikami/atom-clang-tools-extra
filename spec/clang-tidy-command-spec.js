@@ -62,7 +62,7 @@ describe('ClangTidyCommand ', () => {
       })
     })
     runs(() => {
-      expect(result).toBe(`-fix-errors -extra-arg -xcpp foo.cpp`)
+      expect(result).toBe(`-fix-errors -extra-arg -xcpp foo.cpp\n`)
     })
   })
 })
