@@ -1,10 +1,15 @@
 {
   "name": "clang-tools-extra",
   "main": "./lib/clang-tools-extra",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Atom.io integration with clang-tools-extra",
   "keywords": [
-    "clang", "clang-tools-extra", "c++", "c", "objective-c++", "objective-c"
+    "clang",
+    "clang-tools-extra",
+    "c++",
+    "c",
+    "objective-c++",
+    "objective-c"
   ],
   "activationCommands": {},
   "repository": "https://github.com/HiroakiMikami/atom-clang-tools-extra",
