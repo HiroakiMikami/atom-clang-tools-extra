@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "Atom.io integration with clang-tools-extra",
   "keywords": [
-    "clang", "clang-tools-extra"
+    "clang", "clang-tools-extra", "c++", "c", "objective-c++", "objective-c"
   ],
   "activationCommands": {},
   "repository": "https://github.com/atom/clang-tools-extra",
