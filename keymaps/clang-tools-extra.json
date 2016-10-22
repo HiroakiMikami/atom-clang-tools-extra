@@ -1,5 +1,20 @@
 {
-  "atom-text-editor": {
+  "atom-text-editor[data-grammar='source c']": {
+    "ctrl-1": "clang-tools-extra:apply-all-fixes",
+    "ctrl-2": "clang-tools-extra:rename",
+    "ctrl-3": "clang-tools-extra:confirm-rename"
+  },
+  "atom-text-editor[data-grammar='source cpp']": {
+    "ctrl-1": "clang-tools-extra:apply-all-fixes",
+    "ctrl-2": "clang-tools-extra:rename",
+    "ctrl-3": "clang-tools-extra:confirm-rename"
+  },
+  "atom-text-editor[data-grammar='source objc']": {
+    "ctrl-1": "clang-tools-extra:apply-all-fixes",
+    "ctrl-2": "clang-tools-extra:rename",
+    "ctrl-3": "clang-tools-extra:confirm-rename"
+  },
+  "atom-text-editor[data-grammar='source objcpp']": {
     "ctrl-1": "clang-tools-extra:apply-all-fixes",
     "ctrl-2": "clang-tools-extra:rename",
     "ctrl-3": "clang-tools-extra:confirm-rename"
