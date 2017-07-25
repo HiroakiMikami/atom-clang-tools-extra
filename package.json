@@ -1,7 +1,7 @@
 {
   "name": "clang-tools-extra",
   "main": "./lib/clang-tools-extra",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Atom.io integration with clang-tools-extra",
   "keywords": [
     "clang",
